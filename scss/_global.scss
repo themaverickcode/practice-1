@@ -1,0 +1,49 @@
+html{
+    font-size: 100%;
+    box-sizing: border-box;
+}
+*,*::before,*::after{
+    box-sizing: inherit;
+}
+body{
+    margin: 0;
+    padding: 0;
+    font-family: "Alata",sans-serif;
+    font-weight: 400;
+    color: $black;
+    background-color: #fff;
+    &.noscroll{
+        overflow: hidden;
+    }
+}
+// Flexbox
+.flex{
+    display: flex;
+
+    &-jc-sb{
+        justify-content: space-between;
+    }
+    &-jc-c{
+        justify-content: center;
+    }
+    &-ai-c{
+        align-items: center;
+    }
+}
+.container{
+    padding: 2rem;
+    @include breakpoint-up(large){
+        padding: 7rem;
+    }
+}
+// Visibility 
+.hide-for-mobile{
+    @include breakpoint-down(small){
+        display: none;
+    }
+}
+.hide-for-desktop{
+    @include breakpoint-up(medium){
+        display: none;
+    }
+}
